@@ -13,16 +13,18 @@ export class AppController {
 
   @Post('createScheme')
   createScheme(@Body() data: IScheme) {
-    console.log(data);
     const addScheme = this.appService.addNewScheme(data);
     return addScheme;
   }
 
   @Post('getScheme')
   getScheme(@Body() data: IScheme) {
-    console.log(data);
     const getScheme = this.appService.getSchemeByName(data);
-    return getScheme;
+    if (getScheme) {
+      return getScheme;
+    } else {
+      return { status: 'ERROR', message: 'No Schemes Available' };
+    }
   }
 
   @Post('updateScheme')
@@ -39,9 +41,7 @@ export class AppController {
 
   @Post('uploadJsonb')
   async uploadJsonb(@Body() data: any) {
-    console.log(Array.isArray(data.data));
     const res = await this.appService.addCollectionOfScheme(data.data);
-    console.log(res);
     return res;
   }
 }

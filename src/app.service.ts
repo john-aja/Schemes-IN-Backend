@@ -11,8 +11,7 @@ export class AppService {
     private scheme: Repository<Schemes>,
   ) {}
   getHello(): string {
-    console.log('hi');
-    return 'Hello World!';
+    return 'Hello Schemes-IN User!';
   }
 
   async addNewScheme(data: IScheme) {
@@ -36,32 +35,31 @@ export class AppService {
     const getScheme = await this.scheme.findOne({
       where: { schemeId: data.schemeId },
     });
-    return getScheme;
+    if (getScheme) {
+      return getScheme;
+    } else {
+      return { status: 'ERROR', message: 'No Schemes Available' };
+    }
   }
 
   async updateScheme(data: any) {
-    console.log(data);
     const scheme = await this.scheme.findOne({
       where: { schemeId: data.schemeId },
     });
-    console.log(scheme);
     await this.scheme.update({ schemeId: data.schemeId }, { ...data });
     return scheme;
   }
 
   async addCollectionOfScheme(data: IScheme[]) {
-    console.log(data);
     try {
       return await data.map(async (v: any, i) => {
         const isSchemeExist = await this.scheme.findOne({
           where: { schemeId: v.schemeId },
         });
-        console.log('data', !isSchemeExist);
         if (!isSchemeExist) {
           const newScheme = { ...v };
           await this.scheme.save(newScheme);
           if (i === data.length - 1) {
-            console.log(i, data.length);
             return {
               status: 'SUCCESS',
               message: 'New scheme created successfully',
