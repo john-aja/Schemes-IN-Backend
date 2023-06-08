@@ -1,0 +1,25 @@
+{
+  "awscloudformation": {
+    "configLevel": "project",
+    "useProfile": true,
+    "profileName": "default",
+    "accessKeyId": "AKIAY4F7FRH44676J7WW",
+    "secretAccessKey": "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",
+    "region": "eu-north-1"
+  },
+  "amplify-cli": {
+    "projectName": "schemesin",
+    "appId": "dqk0lrocecglc",
+    "envName": "dev",
+    "defaultEditor": "code"
+  },
+  "frontend": {
+    "frontendPlugins": {
+      "javascript": {
+        "distDir": "dist",
+        "buildCommand": "npm run build",
+        "startCommand": "npm run start"
+      }
+    }
+  }
+}
