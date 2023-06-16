@@ -1,5 +1,5 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { Schemes } from 'entities';
+import { Schemes } from './entities';
 
 export const postgresLocalConfig: TypeOrmModuleOptions = {
   type: 'postgres',
