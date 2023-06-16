@@ -4,8 +4,7 @@ import { AppController } from './app.controller';
 import { DataSource } from 'typeorm';
 import { AppService } from './app.service';
 import { Schemes } from './entities';
-import { environment } from 'environment';
-
+import { environment } from './environment';
 @Module({
   imports: [
     TypeOrmModule.forRoot(environment.databaseConfig),

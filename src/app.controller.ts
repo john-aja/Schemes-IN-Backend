@@ -35,8 +35,8 @@ export class AppController {
 
   @Post('getAllScheme')
   async getAllScheme() {
-    const res = await this.appService.getAllSchemes();
-    return res;
+    const schemes = await this.appService.getAllSchemes();
+    return schemes;
   }
 
   @Post('uploadJsonb')
