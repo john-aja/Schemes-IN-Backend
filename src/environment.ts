@@ -3,11 +3,7 @@ import { Schemes } from 'entities';
 
 export const postgresLocalConfig: TypeOrmModuleOptions = {
   type: 'postgres',
-  host: 'localhost',
-  port: 8090,
-  username: 'postgres',
-  password: 'root',
-  database: 'schemesA',
+  url: 'postgres://bxbysyax:z79ce_H4mNLovv6RP7XZt2cwIfSQmGFt@hansken.db.elephantsql.com/bxbysyax',
   entities: [Schemes],
   synchronize: true,
 };
