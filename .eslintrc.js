@@ -1,8 +1,9 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    parser: '@typescript-eslint/parser',
     project: 'tsconfig.json',
-    tsconfigRootDir : __dirname, 
+    tsconfigRootDir: __dirname,
     sourceType: 'module',
   },
   plugins: ['@typescript-eslint/eslint-plugin'],
@@ -15,7 +16,7 @@ module.exports = {
     node: true,
     jest: true,
   },
-  ignorePatterns: ['.eslintrc.js'],
+  ignorePatterns: ['.eslintrc.js', 'index.ts', 'functions/index.js'], // Exclude src/index.ts from ESLint
   rules: {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',

@@ -39,9 +39,9 @@ export class AppController {
     return schemes;
   }
 
-  @Post('uploadJsonb')
-  async uploadJsonb(@Body() data: any) {
-    const res = await this.appService.addCollectionOfScheme(data.data);
-    return res;
-  }
+  // @Post('uploadJsonb')
+  // async uploadJsonb(@Body() data: any) {
+  //   const res = await this.appService.addCollectionOfScheme(data.data);
+  //   return res;
+  // }
 }

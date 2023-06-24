@@ -50,30 +50,30 @@ export class AppService {
     return scheme;
   }
 
-  async addCollectionOfScheme(data: IScheme[]) {
-    try {
-      return await data.map(async (v: any, i) => {
-        const isSchemeExist = await this.scheme.findOne({
-          where: { schemeId: v.schemeId },
-        });
-        if (!isSchemeExist) {
-          const newScheme = { ...v };
-          await this.scheme.save(newScheme);
-          if (i === data.length - 1) {
-            return {
-              status: 'SUCCESS',
-              message: 'New scheme created successfully',
-            };
-          }
-        } else throw new Error('Invalid Input : The scheme is alreay exist');
-      })[0];
-    } catch (e) {
-      return {
-        status: 'ERROR',
-        message: e.message,
-      };
-    }
-  }
+  // async addCollectionOfScheme(data: IScheme[]) {
+  //   try {
+  //     return await data.map(async (v: any, i) => {
+  //       const isSchemeExist = await this.scheme.findOne({
+  //         where: { schemeId: v.schemeId },
+  //       });
+  //       if (!isSchemeExist) {
+  //         const newScheme = { ...v };
+  //         await this.scheme.save(newScheme);
+  //         if (i === data.length - 1) {
+  //           return {
+  //             status: 'SUCCESS',
+  //             message: 'New scheme created successfully',
+  //           };
+  //         }
+  //       } else throw new Error('Invalid Input : The scheme is alreay exist');
+  //     })[0];
+  //   } catch (e) {
+  //     return {
+  //       status: 'ERROR',
+  //       message: e.message,
+  //     };
+  //   }
+  // }
 
   async getAllSchemes() {
     const scheme = await this.scheme.find();
