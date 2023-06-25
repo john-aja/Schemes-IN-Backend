@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 import { IScheme } from './interface';
+import * as nodemailer from 'nodemailer';
 
 @Controller()
 export class AppController {
@@ -39,9 +40,37 @@ export class AppController {
     return schemes;
   }
 
-  // @Post('uploadJsonb')
-  // async uploadJsonb(@Body() data: any) {
-  //   const res = await this.appService.addCollectionOfScheme(data.data);
-  //   return res;
-  // }
+  @Post('sendEmail')
+  async sendEmail(@Body() body: any) {
+    const { name, email, description } = body;
+    // Create a Nodemailer transporter
+    const transporter = nodemailer.createTransport({
+      service: 'Gmail',
+      auth: {
+        user: 'janakiramjack@gmail.com',
+        pass: 'fqzimzdfufrlgibh',
+      },
+    });
+
+    // Setup email data
+    const mailOptions = {
+      from: email,
+      to: 'janakiram.0695@gmail.com',
+      subject: 'New message from your website',
+      text: `Name: ${name}\nEmail: ${email}\nDescription: ${description}`,
+    };
+
+    // Send the email
+    try {
+      const info = await transporter.sendMail(mailOptions);
+      console.log('Email sent:', info.response);
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
+  }
 }
+// @Post('uploadJsonb')
+// async uploadJsonb(@Body() data: any) {
+//   const res = await this.appService.addCollectionOfScheme(data.data);
+//   return res;
+// }

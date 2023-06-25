@@ -3,7 +3,7 @@ import { Schemes } from './entities';
 
 export const postgresLocalConfig: TypeOrmModuleOptions = {
   type: 'postgres',
-  url: 'postgres://bxbysyax:z79ce_H4mNLovv6RP7XZt2cwIfSQmGFt@hansken.db.elephantsql.com/bxbysyax',
+  url: '*********',
   entities: [Schemes],
   synchronize: true,
 };
