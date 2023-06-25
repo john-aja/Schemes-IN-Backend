@@ -3,7 +3,7 @@ import { Schemes } from './entities';
 
 export const postgresLocalConfig: TypeOrmModuleOptions = {
   type: 'postgres',
-  url: '*********',
+  url: '***********',
   entities: [Schemes],
   synchronize: true,
 };

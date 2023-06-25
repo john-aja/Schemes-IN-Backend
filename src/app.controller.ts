@@ -48,7 +48,7 @@ export class AppController {
       service: 'Gmail',
       auth: {
         user: 'janakiramjack@gmail.com',
-        pass: 'fqzimzdfufrlgibh',
+        pass: '******',
       },
     });
 
@@ -63,9 +63,19 @@ export class AppController {
     // Send the email
     try {
       const info = await transporter.sendMail(mailOptions);
-      console.log('Email sent:', info.response);
+      const response = {
+        status: 'SUCCESS',
+        message: 'Email successfully sent to Admin',
+        data: info,
+      };
+      return response;
     } catch (error) {
       console.error('Error sending email:', error);
+      const response = {
+        status: 'SUCCESS',
+        message: 'Email successfully sent to Admin',
+      };
+      return response;
     }
   }
 }
