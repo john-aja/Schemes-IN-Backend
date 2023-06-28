@@ -2,16 +2,6 @@
 
 This repository contains a custom API developed using Express.js framework, TypeORM, and Postgres database. The API is designed to store, retrieve, and update data in the database, as well as provide an endpoint for sending emails to the admin using SMTP.
 
-## Features
-
-The Custom API offers the following features:
-
-- CRUD Operations: The API allows users to perform Create, Read, Update, and Delete operations on the database.
-  
-- Database Interaction: Data is stored, retrieved, and updated in the Postgres database using the API endpoints.
-  
-- Email Functionality: Users can send emails to the admin using the provided endpoint with SMTP integration.
-
 ## Technologies Used
 
 The following technologies are used in the development of this API:
@@ -24,18 +14,15 @@ The following technologies are used in the development of this API:
   
 - SMTP: Simple Mail Transfer Protocol is utilized for sending emails to the admin.
 
-## Installation
+## Features
 
-To set up the Custom API locally, follow these steps:
+The Custom API offers the following features:
 
-1. Clone the repository from GitHub: `git clone https://github.com/john-aja/Schemes-IN-Backend`
-2. Navigate to the project directory: `cd schemes-in`
-3. Install the dependencies: `npm install`
-4. Configure the database connection in the `ormconfig.json` file.
-5. Run the database migrations: `npm run typeorm migration:run`
-6. Start the API server: `npm run start`
-
-Ensure that you have a Postgres database set up and running with the appropriate credentials.
+- CRUD Operations: The API allows users to perform Create, Read, and Update operations on the database.
+  
+- Database Interaction: Data is stored, retrieved, and updated in the Postgres database using the API endpoints.
+  
+- Email Functionality: Users can send emails to the admin using the provided endpoint with SMTP integration.
 
 ## Usage
 
@@ -50,6 +37,19 @@ Once the API is up and running, you can make HTTP requests to the provided endpo
 - **POST /api/sendEmail**: Sends an email to the admin.
 
 Make sure to include the necessary request parameters and data in the request body or URL, depending on the endpoint requirements.
+
+## Installation
+
+To set up the Custom API locally, follow these steps:
+
+1. Clone the repository from GitHub: `git clone https://github.com/john-aja/Schemes-IN-Backend`
+2. Navigate to the project directory: `cd schemes-in`
+3. Install the dependencies: `npm install`
+4. Configure the database connection in the `ormconfig.json` file.
+5. Run the database migrations: `npm run typeorm migration:run`
+6. Start the API server: `npm run start`
+
+Ensure that you have a Postgres database set up and running with the appropriate credentials.
 
 ## Configuration
 
@@ -89,7 +89,7 @@ Contributions to the Custom API are welcome! If you would like to contribute, pl
 
 ## Contact
 
-For any inquiries or support regarding the Scheme Welfare Web Application, please contact:
+For any inquiries or support regarding the Custom API - Schemes-IN, please contact:
 
 ***John***
 Email: ***janakiram.0695@gmail.com***
