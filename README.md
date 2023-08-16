@@ -89,9 +89,8 @@ Contributions to the Custom API are welcome! If you would like to contribute, pl
 
 ## Contact
 
-For any inquiries or support regarding the Custom API - Schemes-IN, please contact:
-
 ***John***
+
 Email: ***janakiram.0695@gmail.com***
 
 Feel free to reach out with any questions, feedback, or suggestions. Your input is highly appreciated!
