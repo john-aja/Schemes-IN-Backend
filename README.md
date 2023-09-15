@@ -1,4 +1,4 @@
-# Custom API - Schemes-IN
+# Custom API - Schemes-IN 
 
 This repository contains a custom API developed using Express.js framework, TypeORM, and Postgres database. The API is designed to store, retrieve, and update data in the database, as well as provide an endpoint for sending emails to the admin using SMTP.
 
